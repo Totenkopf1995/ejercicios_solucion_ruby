@@ -25,16 +25,14 @@ print "Ingresa el número de personas: "
 num = gets.chomp.to_i
 
 people = []
-n_persona = 1
 
-num.times do
-  print "Persona #{n_persona}: "
+num.times do |n_people|
+  print "Persona #{n_people+1}: "
   people << gets.chomp
-  n_persona += 1
 end
 
 puts
 
-people.each_with_index do |element, index|
-  puts "El nombre en la posición #{index} es #{element}"
+people.each_with_index do |names, index|
+  puts "El nombre en la posición #{index} es #{names}"
 end
