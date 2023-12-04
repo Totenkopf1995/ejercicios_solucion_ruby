@@ -14,6 +14,5 @@ Escribe una frase: Hola Mundo
 Hola Mundo</p>
 <img src="./public/imagenes_nivel-1/repite_la_frase.png" alt="Repite la frase">
 
-
 <h2>NIVEL-2</h2>
 <h2>NIVEL-3</h2>
