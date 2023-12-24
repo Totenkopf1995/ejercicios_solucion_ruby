@@ -18,9 +18,11 @@ puts numeros_pares([]).inspect # []
 
 
 def numeros_pares(arr)
-  arr.each do |element|
-    element.even?
+  result = []
+  arr.each do |num|
+    result << num if num.even?
   end
+  result
 end
 
 
