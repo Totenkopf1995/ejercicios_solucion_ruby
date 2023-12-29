@@ -12,7 +12,7 @@
 Escribe una frase: Hola Mundo
 
 Hola Mundo</p>
-<img src="./public/imagenes_nivel-1/repite_la_frase.png" alt="Repite la frase">
+<img src="./public/imagenes_nivel-1/repite.png" alt="Repite la frase">
 
 <h3>Saluda</h3>
 
