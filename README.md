@@ -107,6 +107,67 @@ El número es menor o igual a 10</p>
 
 
 
+<h3>Adivina el número</h3>
+
+<p>Escribe un programa que piense un número de forma aleatoria y le pida al usuario que lo trate de adivinar. Si el número es correcto debe imprimir "Felicitaciones, ese era!", de lo contrario debe imprimir "Lo siento, intenta nuevamente!". Por ejemplo:</p>
+
+<p>$ ruby adivina.rb
+
+Adivina el número que estoy pensando: 5
+
+Felicitaciones, lo lograste!</p>
+<img alt="adivina el numero" src="public/imagenes_nivel-1/adivina_el_numero.png"/>
+
+
+
+<h3>Es múltiplo de 5</h3>
+
+<p>Un múltiplo de 5 es aquel que dividio por 5 da por resultado un número entero (sin residuo). Por ejemplo 10, 15, 20, etc. son múltiplos de 5. 11 no es múltiplo de 5 porque quedaría un residuo de 1.</p>
+
+<p>Escribe un programa que le pida al usuario un número e imprima si es un múltiplo de 5 o no. Si es múltiplo debe imprimir "Si, el número x es múltiplo 5", de lo contrario debe imprimir "No, el número x no es múltiplo de 5". Por ejemplo:</p>
+
+<p>ruby multiplo.md
+
+print "Ingresa el número: 5"
+
+Si, el número 5 es múltiplo de 5</p>
+
+
+<p>$ ruby multiplo.md
+
+print "Ingresa el número: 11"
+
+No, el número 11 no es múltiplo de 5</p>
+
+<p>Pista: La forma más fácil de de verificar si un número es múltiplo de otro es calcular el módulo y verificar que sea 0. El módulo es el residuo. Por ejemplo, 11 módulo 5 es 1. 23 módulo 5 es 3.</p>
+<img alt="es multiplo de 5" src="public/imagenes_nivel-1/es_multiplo_de_5.png"/>
+
+
+
+<h3>Mayor, menor o igual</h3>
+
+<p>Escribe un programa para la consola que le pida un número al usuario y le diga si es mayor, menor o igual que 10. Por ejemplo:</p>
+
+<p>$ ruby mayor_menor_igual.rb
+
+Ingresa un número: 10
+
+El número es igual a 10</p>
+
+
+<p>$ ruby mayor_menor_igual.rb
+
+Ingresa un número: 5
+
+El número es menor que 10</p>
+
+
+<p>$ ruby mayor_menor_igual.rb
+
+Ingresa un número: 11
+
+El número es mayor que 10</p>
+<img alt="mayor menor igual" src="public/imagenes_nivel-1/mayor_menor_igual.png"/>
 
 
 
@@ -115,9 +176,8 @@ El número es menor o igual a 10</p>
 
 
 
-Mayor que diez
-Adivina el número
-Es múltiplo de 5
+
+
 Mayor, menor o igual
 BMI con rangos
 Generaciones
