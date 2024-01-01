@@ -2,6 +2,7 @@
 
 <h2>NIVEL-1</h2>
 
+
 <h3>Repite la frase</h3>
 <p>Escribe un programa para la consola que le pida al usuario ingresar una frase y la imprima nuevamente debajo.</p>
 
@@ -13,6 +14,8 @@ Escribe una frase: Hola Mundo
 
 Hola Mundo</p>
 <img src="./public/imagenes_nivel-1/repite.png" alt="Repite la frase">
+
+
 
 <h3>Saluda</h3>
 
@@ -27,6 +30,8 @@ Escribe tu nombre: Pedro</p>
 Te en cuenta la línea en blanco antes de imprimir el saludo!</p>
 <img src="./public/imagenes_nivel-1/saluda.png" alt="saluda">
 
+
+
 <h3>suma</h3>
 
 <p>Escribe un programa para la consola que le pida al usuario ingresar dos números e imprima la suma de los dos números. Por ejemplo:</p>
@@ -39,6 +44,8 @@ Ingresa el segundo número 5
 
 El resultado es 10</p>
 <img src="./public/imagenes_nivel-1/suma.png" alt="suma">
+
+
 
 <h3>¿Cuál es mi edad?</h3>
 
@@ -59,12 +66,55 @@ Tienes 30 años</p>
 
 
 
+<h3>BMI</h3>
+<p>El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.</p>
+
+El BMI se calcula con la siguiente formula:
+
+peso / altura^2
+
+Escribe un programa que le pida al usuario su peso y su altura para calcular su BMI. Por ejemplo:</p>
+
+<p>$ ruby bmi.rb
+
+Ingresa tu peso: 65
+
+Ingresa tu altura: 1.8
+
+Tu BMI es 20.061728395061728</p>
+
+<p>Como bono intenta redondear el número a un decimal.</p>
+<img src="public/imagenes_nivel-1/bmi.png" alt="BMI">
+
+
+
+<h3>Mayor que diez</h3>
+
+<p>Escribe un programa para la consola que le pida un número al usuario y le diga si es mayor o menor/igual a 10. Por ejemplo:</p>
+
+<p>$ ruby mayor_que_diez.rb
+
+Ingresa un número: 10
+
+El número es mayor a 10</p>
+
+<p>$ ruby mayor_que_diez.rb
+
+Ingresa un número: 5
+
+El número es menor o igual a 10</p>
+<img alt="mayor que diez" src="public/imagenes_nivel-1/mayor_que_diez.png"/>
 
 
 
 
 
-BMI
+
+
+
+
+
+
 Mayor que diez
 Adivina el número
 Es múltiplo de 5
