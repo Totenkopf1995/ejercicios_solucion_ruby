@@ -1,5 +1,5 @@
 =begin
-                                             # Promedio
+                   Promedio
 
 Escribe un método llamado `promedio` que reciba un arreglo de números y retorne el promedio de los números en el arreglo.
 

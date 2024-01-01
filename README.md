@@ -27,9 +27,43 @@ Escribe tu nombre: Pedro</p>
 Te en cuenta la línea en blanco antes de imprimir el saludo!</p>
 <img src="./public/imagenes_nivel-1/saluda.png" alt="saluda">
 
+<h3>suma</h3>
 
-Suma
-Cuál es mi edad?
+<p>Escribe un programa para la consola que le pida al usuario ingresar dos números e imprima la suma de los dos números. Por ejemplo:</p>
+
+<p>$ ruby suma.rb
+
+Ingresa el primer número: 5
+
+Ingresa el segundo número 5
+
+El resultado es 10</p>
+<img src="./public/imagenes_nivel-1/suma.png" alt="suma">
+
+<h3>¿Cuál es mi edad?</h3>
+
+<p>Escribe un programa para la consola que le pregunte al usuario el año en que nació e imprima su edad actual. Por ejemplo, asumiendo que el año actual es 2020:</p>
+
+<p>$ ruby edad.rb
+
+En qué año naciste? 1990
+
+Tienes 30 años</p>
+
+<p>Puedes quemar el año actual en el programa aunque un buen ejercicio es buscar cómo se obtiene el año actual.</p>
+
+<p>Si quieres hacer este ejercicio más interesante intenta mostrar un mensaje "Imposible! Aún no has nacido" si el año es mayor al actual e "Imposible! Nadie tiene esa edad" si la edad es más de 120 años.</p>
+
+<p>También puedes tener en cuenta el caso en que la persona tenga un año, para que no utilice el plural: "Tienes 1 año" en ves de "Tienes 1 años".</p>
+<img src="./public/imagenes_nivel-1/cual_es_mi_edad.png" alt="cual es mi edad">
+
+
+
+
+
+
+
+
 BMI
 Mayor que diez
 Adivina el número
