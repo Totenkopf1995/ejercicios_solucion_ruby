@@ -15,8 +15,6 @@ Para mostrar el arreglo después de mezclarlo puedes utilizar .inspect. Por ejem
 arr = ["Pedro", "Juan", "Daniel"]
 puts arr.inspect # imprime ["Pedro", "Juan", "Daniel"]
 Si este ejercicio te está pareciendo muy complicado intenta primero pedirle al usuario un número fijo de personas e imprimirlas (sin mezclar). Para solucionar este ejercicio debes definir una variable con un arreglo vacío y después hacer un ciclo en el que vas insertando cada nombre que ingrese el usuario.
-
-Todo lo que necesitas para hacer este ejercicio lo encuentras en este recurso.
 =end
 
 print "Ingresa el número de personas: "

@@ -69,7 +69,8 @@
 ---
 
 
-### Repite la frase
+## Repite la frase
+
 Escribe un programa para la consola que le pida al usuario ingresar una frase y la imprima nuevamente debajo.
 
 #### Por ejemplo, el resultado de ejecutar el programa utilizando la frase "Hola Mundo" sería el siguiente:
@@ -92,7 +93,7 @@ p frase
 ---
 
 
-### Saluda
+## Saluda
 
 Escribe un programa en la consola que le pregunte al usuario su nombre e imprima "Hola " seguido del nombre y un signo de exclamación. Por ejemplo:
 
@@ -117,7 +118,8 @@ Te en cuenta la línea en blanco antes de imprimir el saludo!
 
 ---
 
-### suma
+
+## suma
 
 #### Escribe un programa para la consola que le pida al usuario ingresar dos números e imprima la suma de los dos números. Por ejemplo:
 
@@ -145,7 +147,8 @@ puts "El resultado es #{result}"
 
 ---
 
-### ¿Cuál es mi edad?
+
+## ¿Cuál es mi edad?
 
 #### Escribe un programa para la consola que le pregunte al usuario el año en que nació e imprima su edad actual. Por ejemplo, asumiendo que el año actual es 2020:
 
@@ -187,7 +190,8 @@ end
 
 ---
 
-### BMI
+
+## BMI
 El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.
 
 #### El BMI se calcula con la siguiente formula:
@@ -221,7 +225,8 @@ print "Tu BMI es #{bmi.round}"
 
 ---
 
-### Mayor que diez
+
+## Mayor que diez
 
 #### Escribe un programa para la consola que le pida un número al usuario y le diga si es mayor o menor/igual a 10. Por ejemplo:
 
@@ -255,7 +260,8 @@ end
 
 ----
 
-### Adivina el número
+
+## Adivina el número
 
 #### Escribe un programa que piense un número de forma aleatoria y le pida al usuario que lo trate de adivinar. Si el número es correcto debe imprimir "Felicitaciones, ese era!", de lo contrario debe imprimir "Lo siento, intenta nuevamente!". Por ejemplo:
 
@@ -279,7 +285,8 @@ puts numero_usuario == numero_random ? "Felicitaciones, ese era!" : "Lo siento, 
 
 ---
 
-### Es múltiplo de 5
+
+## Es múltiplo de 5
 
 Un múltiplo de 5 es aquel que dividio por 5 da por resultado un número entero (sin residuo). Por ejemplo 10, 15, 20, etc. son múltiplos de 5. 11 no es múltiplo de 5 porque quedaría un residuo de 1.
 
@@ -309,7 +316,8 @@ puts numero % 5 == 0 ? "Si, el número #{numero} es múltiplo de 5" : "No, el n�
 
 ---
 
-### Mayor, menor o igual
+
+## Mayor, menor o igual
 
 #### Escribe un programa para la consola que le pida un número al usuario y le diga si es mayor, menor o igual que 10. Por ejemplo:
 
@@ -349,7 +357,8 @@ end
 
 ---
 
-### BMI 2
+
+## BMI 2
 El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.
 
 #### El BMI se calcula con la siguiente formula:
@@ -408,7 +417,8 @@ end
 
 ---
 
-### Generaciones
+
+## Generaciones
 
 #### Escribe un programa para la consola que le pida al usuario su año de nacimiento e imprima la generación a la que pertenece:
 
@@ -479,7 +489,8 @@ end
 
 ---
 
-### Repite varias veces
+
+## Repite varias veces
 
 #### Escribe un programa para la consola que le pida al usuario ingresar una frase y un número. El programa deberá imprimir la frase el número de veces que ingresó el usuario. Por ejemplo:
 
@@ -512,7 +523,8 @@ end
 
 ---
 
-### Rango de números
+
+## Rango de números
 
 #### Escribe un programa para la consola que le pida al usuario dos números e imprima los números en ese rango. Por ejemplo:
 
@@ -549,21 +561,336 @@ end
 ---
 
 
+## Adivina el número (varios intentos)
+
+#### Escribe un programa que piense un número de forma aleatoria y le pida al usuario que lo trate de adivinar (como en uno de los ejercicios anteriores). La diferencia es que esta vez el usuario puede intentar indefinidamente hasta que encuentre el número. Por ejemplo:
+
+````
+$ ruby adivina_intentos.rb
+Adivina el número que estoy pensando: 4
+Lo sentimos! Intenta nuevamente: 5
+Lo sentimos! Intenta nuevamente: 7
+
+Felicitaciones, lo encontraste!
+````
+
+Si deseas ir un paso más allá intenta limitar el número de intentos a 3 o 5 :)
+
+## Solucion:
+````
+numero_random = rand(0..10)
+
+print "Adivina el número que estoy pensando: "
+numero_usuario = gets.chomp.to_i
+
+puts numero_usuario == numero_random ? "Felicitaciones, ese era!" : "Lo siento, intenta nuevamente!"
+
+while numero_usuario != numero_random
+  print "Adivina el número que estoy pensando: "
+numero_usuario = gets.chomp.to_i
+
+puts numero_usuario == numero_random ? "Felicitaciones, ese era!" : "Lo siento, intenta nuevamente!"
+end
+````
+
+![adivina el numero-2](./public/imagenes_nivel-1/adivina_numero-2.png)
+
+---
+
+
+## Imprime la lista
+
+Escribe un programa para la línea de comandos que le permita a un usuario ingresar una lista de nombres y después los imprima mostrando la posición en la que se encuentran.
+
+Lo primero que debe pedir el programa es el número de personas que se quieren ingresar. Luego pregunta por el nombre de cada persona y las va almacenando en un arreglo. Al final, por cada persona ingresada, imprime la frase "El nombre en la posición x es y" (p.e. "El nombre en la posición 0 es Pedro").
+
+````
+$ ruby imprime_lista.rb
+Ingresa el número de personas: 3
+Persona 1: Juan
+Persona 2: Pedro
+Persona 3: Daniel
+
+El nombre en la posición 0 es Juan
+El nombre en la posición 1 es Pedro
+El nombre en la posición 2 es Daniel
+````
+
+Si se te está complicando este ejercicio intenta inciar con un arreglo fijo. 
+### Por ejemplo:
+
+````
+names = ["Juan", "Pedro", "Daniel"]
+````
+
+recorre el arreglo e imprime la frase por cada uno
+
+Puedes también imprimir sólo el nombre y después vas armando la frase. La programación es de dividir los problemas e irlos solucionando por partes.
+
+## Solucion:
+````
+print "Ingresa el número de personas: "
+num = gets.chomp.to_i
+
+people = []
+
+num.times do |n_people|
+  print "Persona #{n_people+1}: "
+  people << gets.chomp
+end
+
+puts
+
+people.each_with_index do |names, index|
+  puts "El nombre en la posición #{index} es #{names}"
+end
+````
+
+![imprime la lista](./public/imagenes_nivel-1/imprime_lista.png)
+
+---
+
+
+## Escalera
+
+#### Escribe un programa para la consola que le pida al usuario un número y cree una escalera como en el siguiente ejemplo:
+
+````
+Ingresa un número: 5
+#
+##
+###
+####
+#####
+````
+
+En la primera línea se imprime un #, en la segunda dos, y así sucesivamente hasta el número que ingresó el usuario.
+
+#### Si el ejercicio te parece muy fácil intenta invertir la escalera:
+
+````
+Ingresa un número: 5
+#####
+####
+###
+##
+#
+````
+
+## Solucion:
+````
+print 'Ingrese un numero: '
+num = gets.chomp.to_i
+
+caracter = '#'
+
+(1..num).each do |i|
+  puts caracter * i
+end
+````
+
+![escalera](./public/imagenes_nivel-1/escalera.png)
+
+---
+
+
+## Orden aleatorio
+
+Escribe un programa que permita al usuario ingresar una lista de nombres y los mezcle de forma aleatoria.
+
+El programa deberá preguntar primero cuál es el número de personas que se quiere ingresar. Luego le va preguntando por el nombre de cada persona y las va almacenando en un arreglo. Al final muestra la lista de personas ordenadas de forma aleatoria. 
+
+#### Por ejemplo:
+
+````
+Ingresa el número de personas: 3
+Persona 1: Juan
+Persona 2: Pedro
+Persona 3: Daniel
+
+["Pedro", "Juan", "Daniel"]
+````
+
+Para mostrar el arreglo después de mezclarlo puedes utilizar .inspect. 
+
+#### Por ejemplo:
+
+````
+arr = ["Pedro", "Juan", "Daniel"]
+puts arr.inspect # imprime ["Pedro", "Juan", "Daniel"]
+````
+
+Si este ejercicio te está pareciendo muy complicado intenta primero pedirle al usuario un número fijo de personas e imprimirlas (sin mezclar). Para solucionar este ejercicio debes definir una variable con un arreglo vacío y después hacer un ciclo en el que vas insertando cada nombre que ingrese el usuario.
+
+## Solucion:
+````
+print "Ingresa el número de personas: "
+num = gets.chomp.to_i
+
+people = []
+
+num.times do |n_people|
+  print "Persona #{n_people+1}: "
+  people << gets.chomp
+end
+
+puts
+
+array_random = people.shuffle
+
+puts array_random.inspect
+````
+
+![orden aleatorio](./public/imagenes_nivel-1/orden_aleatorio.png)
+
+---
+
+
+## Traductor
+
+Escribe un programa que traduzca los números del uno al diez de español a inglés. Si es cualquier otra palabra deberá imprimir "No encontramos la traducción de " seguido de la palabra que escribió el usuario. 
+
+#### Por ejemplo:
+
+````
+$ ruby traductor.rb
+Escribe la palabra a traducir: uno
+
+La traducción es: one
+````
+
+````
+$ ruby
+Escribe la palabra a traducir: hola
+
+No encontramos la traducción de hola
+````
+
+Aunque este ejercicio se puede solucionar utilizando condicionales, intenta definir un hash con las traducciones (la llave sería la palabra en español y el valor la palabra en inglés) y utilizar ese hash para traducir la palabra que ingrese el usuario.
+
+## Solucion:
+````
+hash = {
+  uno: 'one', 
+  dos: 'two', 
+  tres: 'three', 
+  cuatro: 'four', 
+  cinco: 'five', 
+  seis: 'six', 
+  siete: 'sevent', 
+  ocho: 'eight', 
+  nueve: 'nine', 
+  dies: 'ten'
+}
+
+print 'Escribe la palabra a traducir: '
+palabra = gets.chomp.to_sym
+
+traducir = hash[palabra]
+puts
+if traducir
+  puts "La traducción es: #{traducir}"
+else
+  puts "No encontramos la traducción de #{palabra}"
+end
+````
+
+![traductor](./public/imagenes_nivel-1/traductor.png)
+
+---
+
+
+Métodos
+Escribe un método llamado hola que reciba un argumento y retorne una cadena de texto "Hola " seguido del argumento que se recibió. Puedes copiar y pegar la siguiente plantilla para escribir tu solución:
+
+````
+# escribe tu solución acá
+
+puts hola("Pedro") # debería imprimir "Hola Pedro"
+puts hola("Juan") # debería imprimir "Hola Juan"
+puts hola("") # debería imprimir "Hola "
+````
+
+#### Al ejecutarlo debería aparecer algo así:
+
+````
+$ ruby metodos.rb
+Hola Pedro
+Hola Juan
+Hola
+````
+
+## Solucion:
+````
+def hola(name)
+  puts "hola #{name}"
+end
+
+print hola("Pedro") 
+print hola("Juan")
+print hola("")
+````
+
+![saluda metodo](./public/imagenes_nivel-1/saluda_metodo.png)
+
+---
+
+
+## Todos son 5
+
+Escribe un método llamado todos_son_5 que reciba un arreglo y devuelva true si todos los elementos son el número 5. Si hay al menos un elemento que no es 5 deberá retornar false.
+
+#### Puedes utilizar la siguiente plantilla para tu solución:
+
+````
+# acá va tu solución
+
+puts todos_son_5([5, 5, 5]) # true
+puts todos_son_5([5, 5, 5, 5, 5, 5]) # true
+puts todos_son_5([5, 4, 5]) # false
+puts todos_son_5([]) # false
+puts todos_son_5([5, "5", 5]) # false
+````
+
+#### Al ejecutarlo debería aparecer lo siguiente:
+
+````
+$ ruby todos_son_5.rb
+true
+true
+false
+false
+false
+````
+
+## Solucion:
+````
+def todos_son_5(array)
+  return false if array.length == 0 
+  
+  array.each do |e|
+    return false if e != 5
+  end
+  
+  true
+end
+
+puts todos_son_5([5, 5, 5])
+puts todos_son_5([5, 5, 5, 5, 5, 5])
+puts todos_son_5([5, 4, 5])
+puts todos_son_5([])
+puts todos_son_5([5, "5", 5]) 
+````
+
+![todos son 5](./public/imagenes_nivel-1/todos_son_5.png)
+
+---
+
+## NIVEL-2
+
+---
 
 
 
 
-
-
-
-
-Adivina el número (varios intentos)
-Imprime la lista
-Escalera
-Orden aleatorio
-Traductor
-Saluda con método
-Todos son 5
-
-<h2>NIVEL-2</h2>
-<h2>NIVEL-3</h2>
+## NIVEL-3
