@@ -801,7 +801,7 @@ end
 
 
 Métodos
-Escribe un método llamado hola que reciba un argumento y retorne una cadena de texto "Hola " seguido del argumento que se recibió. Puedes copiar y pegar la siguiente plantilla para escribir tu solución:
+Escribe un método llamado `hola` que reciba un argumento y retorne una cadena de texto "Hola " seguido del argumento que se recibió. Puedes copiar y pegar la siguiente plantilla para escribir tu solución:
 
 ````
 # escribe tu solución acá
@@ -838,7 +838,7 @@ print hola("")
 
 ## Todos son 5
 
-Escribe un método llamado todos_son_5 que reciba un arreglo y devuelva true si todos los elementos son el número 5. Si hay al menos un elemento que no es 5 deberá retornar false.
+Escribe un método llamado `todos_son_5` que reciba un arreglo y devuelva true si todos los elementos son el número 5. Si hay al menos un elemento que no es 5 deberá retornar false.
 
 #### Puedes utilizar la siguiente plantilla para tu solución:
 
@@ -893,7 +893,7 @@ puts todos_son_5([5, "5", 5])
 
 ## Número de likes
 
-Escribe un método llamado numero_de_likes que reciba un número y devuelva una cadena utilizando el formato de K para miles y M para millones (p.e. 1400 se convierte en 1K, 34,567 se convierte en 34K, 7'456,345 se convierte en 7M). Si el número es menor a 1000 se debe devolver el mismo número como una cadena.
+Escribe un método llamado `numero_de_likes` que reciba un número y devuelva una cadena utilizando el formato de K para miles y M para millones (p.e. 1400 se convierte en 1K, 34,567 se convierte en 34K, 7'456,345 se convierte en 7M). Si el número es menor a 1000 se debe devolver el mismo número como una cadena.
 
 ````
 # escribe tu solución acá
@@ -939,7 +939,7 @@ puts
 
 ## Contar elementos
 
-Escribe un método contar que reciba un arreglo y retorne la cantidad de veces que aparece el número 5.
+Escribe un método `contar` que reciba un arreglo y retorne la cantidad de veces que aparece el número 5.
 
 ````
 # escribe tu solución acá
@@ -986,6 +986,253 @@ puts contar([1, "hola", 3, "mundo"], 5) # 0
 ![contar elementos](./public/imagenes_nivel-2/contar_elementos.png)
 
 ---
+
+
+## Reemplazar elementos
+
+Escribe un método llamado `reemplazar` que reciba un arreglo y reemplace todos los elementos que sean un 1 por un 0 y lo contrario, todos los elementos que sean 0 por 1.
+
+````
+# escribe tu solución acá
+
+puts reemplazar([1, 1]).inspect # [0, 0]
+puts reemplazar([0, 0]).inspect # [1, 1]
+puts reemplazar([1, 0, 0, 1]).inspect # [0, 1, 1, 0]
+puts reemplazar([1, 0, 2]).inspect # [0, 1, 2]
+````
+
+## solucion:
+````
+def reemplazar(arr)
+  arr.map { |elemento| elemento == 1 ? 0 : (elemento == 0 ? 1 : elemento) }
+end
+
+puts reemplazar([1, 1]).inspect # [0, 0]
+puts reemplazar([0, 0]).inspect # [1, 1]
+puts reemplazar([1, 0, 0, 1]).inspect # [0, 1, 1, 0]
+puts reemplazar([1, 0, 2]).inspect # [0, 1, 2]
+````
+
+![reenplazar elementos](./public/imagenes_nivel-2/reenplazar_elementos.png)
+
+---
+
+
+## Posiciones pares
+
+Escribe un método llamado `posiciones_pares` que reciba un arreglo y devuelva un nuevo arreglo con los valores que se encuentran en las posiciones pares del arreglo (0, 2, 4, 6, 8, etc.)
+
+````
+# escribe tu solución acá
+
+puts posiciones_pares([0, 1, 2, 3, 4]).inspect # [0, 2, 4]
+puts posiciones_pares(["Make", "sun", "it", "bright", "Real"]).inspect # ["Make", "it", "Real"]
+puts posiciones_pares([]).inspect # []
+````
+
+## Soluciones:
+````
+def posiciones_pares(arr)
+  arr.select.with_index { |element, index| index.even? }
+end
+
+puts posiciones_pares([0, 1, 2, 3, 4]).inspect # Output: [0, 2, 4]
+puts posiciones_pares(["Make", "sun", "it", "bright", "Real"]).inspect # Output: ["Make", "it", "Real"]
+puts posiciones_pares([]).inspect # Output: []
+````
+
+![posiciones pares](./public/imagenes_nivel-2/posiciones_pares.png)
+
+---
+
+
+## Números pares
+
+Escribe un método llamado `numeros_pares` que reciba un arreglo de números y devuelva un nuevo arreglo únicamente con los números pares.
+
+````
+# escribe tu solución acá
+
+puts numeros_pares([0, 1, 2, 3, 4]).inspect # [0, 2, 4]
+puts numeros_pares([120, 876, 934, 1298]).inspect # [120, 876, 934, 1298]
+puts numeros_pares([7, 921, 43, 9649]).inspect # []
+puts numeros_pares([17, 34, 87, 6, 95, 82, 21]).inspect # [34, 6, 82]
+puts numeros_pares([]).inspect # []
+````
+
+## Soluciones:
+````
+def numeros_pares(arr)
+  result = []
+  arr.each do |num|
+    result << num if num.even?
+  end
+  result
+end
+
+
+puts numeros_pares([0, 1, 2, 3, 4]).inspect # [0, 2, 4]
+puts numeros_pares([120, 876, 934, 1298]).inspect # [120, 876, 934, 1298]
+puts numeros_pares([7, 921, 43, 9649]).inspect # []
+puts numeros_pares([17, 34, 87, 6, 95, 82, 21]).inspect # [34, 6, 82]
+puts numeros_pares([]).inspect # []
+````
+
+![numeros pares](./public/imagenes_nivel-2/numeros_pares.png)
+
+---
+
+
+## Arreglo de posiciones
+
+Escribe un método llamado `posiciones_num_1` que reciba un arreglo y retorne un nuevo arreglo con las posiciones en las que aparece el número uno (1).
+
+#### Puedes utilizar la siguiente plantilla
+
+````
+# escribe tu solución acá
+
+puts posiciones_num_1([0, 1, 0, 1]).inspect # [1, 3]
+puts posiciones_num_1([1, 1, 1]).inspect # [0, 1, 2]
+puts posiciones_num_1([2, 3, 4]).inspect # []
+````
+
+## Soluciones:
+````
+def posiciones_num_1(arr)
+  ret = []
+  arr.each_with_index do |val, i|
+    ret << i if val == 1
+  end
+  ret
+end
+
+puts posiciones_num_1([0, 1, 0, 1]).inspect # [1, 3]
+puts posiciones_num_1([1, 1, 1]).inspect # [0, 1, 2]
+puts posiciones_num_1([2, 3, 4]).inspect # []
+````
+
+![arreglo posiciones](./public/imagenes_nivel-2/arreglo_posiciones.png)
+
+---
+
+
+## Promedio
+
+Escribe un método llamado `promedio` que reciba un arreglo de números y retorne el promedio de los números en el arreglo.
+
+````
+# escribe tu solución acá
+
+puts promedio([3, 3, 3]) # 3
+puts promedio([3, 4, 5, 8]) # 5
+puts promedio([2, 2, 3, 3]) # 2.5
+````
+
+## Solucion:
+````
+def promedio(arr)
+
+  arr.sum / arr.length.to_f
+
+end
+
+puts promedio([3, 3, 3]) # 3
+puts promedio([3, 4, 5, 8]) # 5
+puts promedio([2, 2, 3, 3]) # 2.5
+````
+
+![promedio](./public/imagenes_nivel-2/promedio.png)
+
+---
+
+
+## Generador de contraseñas
+
+#### Escribe un método llamado `contrasena` que reciba una cadena y devuelva una nueva cadena realizando los siguientes cambios:
+
+
+Las mayúsculas se reemplazan por minúsculas.
+Se eliminan los espacios en blanco.
+Se reemplaza la a por 4.
+Se reemplaza la e por 3.
+Se reemplaza la i por 1.
+Se reemplaza la o por 0.
+
+````
+# escribe tu solución acá
+
+puts contrasena("hola") # "h0l4"
+puts contrasena("esta es una prueba") # "3st43sun4pru3b4"
+puts contrasena("") # ""
+````
+
+#### Nota: Esta no es una forma segura de generar contraseñas y no la recomendamos.
+
+## Solucion:
+````
+def contrasena(str)
+
+  str = str.downcase
+  str = str.gsub  " ", ""
+  str = str.gsub  "a", "4"
+  str = str.gsub  "e", "3"
+  str = str.gsub  "i", "1"
+  str = str.gsub  "o", "0"
+
+  str
+end
+
+puts contrasena("hola") # "h0l4"
+puts contrasena("esta es una prueba") # "3st43sun4pru3b4"
+puts contrasena("") # ""
+````
+
+````
+def contrasena(str)
+  
+  subs = {'a' => '4', 'e' => '3', 'i' => '1', 'o' => '0'}
+  str.downcase.gsub(/[aeio]/, subs).delete(' ')
+  
+end
+
+puts contrasena("hola") # "h0l4"
+puts contrasena("esta es una prueba") # "3st43sun4pru3b4"
+puts contrasena("") # ""
+````
+
+![generador de contraseñas](./public/imagenes_nivel-2/generador_de_contraseñas.png)
+![generador de contraseñas 2](./public/imagenes_nivel-2/generador_de_contraseñas-2.png)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+Generador de contraseñas
+Buscar en un arreglo
+Cadena a arreglo
+Arreglo a cadena
+Buscar en una matriz
+Matriz a tabla
+Crea un hash
+Traduce la frase
+Formatea un hash
+Frecuencias
+Transcripción de ARN
+
+
+
+
+
 
 
 
