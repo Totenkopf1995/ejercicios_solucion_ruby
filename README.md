@@ -1228,10 +1228,81 @@ puts buscar(["h", "o", "l", "a"], "d") # -1
 
 ## Solucion:
 ````
+def buscar(arr, elemento)
+  indice = arr.index(elemento)
 
+  if indice.nil?
+    print -1
+  else
+    print indice
+  end
+end
+
+
+puts buscar([1, 2, 3], 3) # 2
+puts buscar([4, 7, 2, 9, 3], 4) # 0
+puts buscar([8, 3, 54, 9, 1], 7) # -1
+puts buscar([3, 1, 4, 2, 4], 4) # 2
+puts buscar(["h", "o", "l", "a"], "l") # 2
+puts buscar(["h", "o", "l", "a"], "d") # -1
 ````
 
 ![buscar en un arreglo](./public/imagenes_nivel-2/buscar_en_un_arreglo.png)
+
+---
+
+
+## Cadena a arreglo
+
+Escribe un método llamado `cadena_a_arreglo` que reciba una cadena de texto y retorne un arreglo con las palabras de la cadena.
+Puedes dividir las cadena por los espacios en blanco para encontrar las palabras.
+
+````
+# escribe tu solución acá
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+#### Nota: Ruby trae un método sobre las cadenas que te permite hacer precisamente esto. Tu reto es encontrar ese método y aplicarlo.
+Si quieres ir un paso más allá intenta separar la cadena sin utilizar ese método.
+
+## Solucion:
+````
+def cadena_a_arreglo(str)
+  str.split(" ")
+end
+
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+````
+def cadena_a_arreglo(str)
+  arr = []
+  pal = ""
+  str.each_char do |i|
+    if i == " "
+      arr << pal
+      pal = ""
+    else
+      pal += i
+    end
+  end
+  arr << pal
+end
+
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+![cadena a arreglo](./public/imagenes_nivel-2/cadena_a_arreglo.png)
+![cadena a arreglo 2](./public/imagenes_nivel-2/cadena_a_arreglo-2.png)
 
 ---
 
@@ -1242,7 +1313,8 @@ puts buscar(["h", "o", "l", "a"], "d") # -1
 
 
 
-Buscar en un arreglo
+
+
 Cadena a arreglo
 Arreglo a cadena
 Buscar en una matriz

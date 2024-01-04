@@ -15,8 +15,13 @@ puts buscar(["h", "o", "l", "a"], "d") # -1
 =end
 
 def buscar(arr, elemento)
-  array = arr.count(elemento)
-  array.to_i
+  indice = arr.index(elemento)
+
+  if indice.nil?
+    print -1
+  else
+    print indice
+  end
 end
 
 
