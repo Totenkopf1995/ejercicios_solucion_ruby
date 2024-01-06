@@ -1228,10 +1228,167 @@ puts buscar(["h", "o", "l", "a"], "d") # -1
 
 ## Solucion:
 ````
+def buscar(arr, elemento)
+  indice = arr.index(elemento)
 
+  if indice.nil?
+    print -1
+  else
+    print indice
+  end
+end
+
+
+puts buscar([1, 2, 3], 3) # 2
+puts buscar([4, 7, 2, 9, 3], 4) # 0
+puts buscar([8, 3, 54, 9, 1], 7) # -1
+puts buscar([3, 1, 4, 2, 4], 4) # 2
+puts buscar(["h", "o", "l", "a"], "l") # 2
+puts buscar(["h", "o", "l", "a"], "d") # -1
 ````
 
 ![buscar en un arreglo](./public/imagenes_nivel-2/buscar_en_un_arreglo.png)
+
+---
+
+
+## Cadena a arreglo
+
+Escribe un método llamado `cadena_a_arreglo` que reciba una cadena de texto y retorne un arreglo con las palabras de la cadena.
+Puedes dividir las cadena por los espacios en blanco para encontrar las palabras.
+
+````
+# escribe tu solución acá
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+#### Nota: Ruby trae un método sobre las cadenas que te permite hacer precisamente esto. Tu reto es encontrar ese método y aplicarlo.
+
+Si quieres ir un paso más allá intenta separar la cadena sin utilizar ese método.
+
+## Solucion:
+````
+def cadena_a_arreglo(str)
+  str.split(" ")
+end
+
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+````
+def cadena_a_arreglo(str)
+  arr = []
+  pal = ""
+  str.each_char do |i|
+    if i == " "
+      arr << pal
+      pal = ""
+    else
+      pal += i
+    end
+  end
+  arr << pal
+end
+
+
+puts cadena_a_arreglo("Hola mundo").inspect # ["Hola", "mundo"]
+puts cadena_a_arreglo("Make it Real").inspect # ["Make", "it", "Real"]
+puts cadena_a_arreglo("").inspect # []
+````
+
+![Cadena a arreglo](./public/imagenes_nivel-2/cadena_a_arreglo.png)
+![Cadena a arreglo](./public/imagenes_nivel-2/cadena_a_arreglo-2.png)
+
+---
+
+
+## Arreglo a cadena
+
+Escribe un método llamado `arreglo_a_cadena` que reciba un arreglo y retorne una cadena de texto uniendo todos los elementos con espacios.
+
+````
+# escribe tu solución acá
+
+puts arreglo_a_cadena(["hola", "mundo"]) # "hola mundo"
+puts arreglo_a_cadena(["Make", "it", "Real"]) # "Make it Real"
+puts arreglo_a_cadena([]) # ""
+````
+
+#### Nota: Ruby trae un método sobre los arreglos que te permite hacer precisamente esto. 
+#### Tu reto es encontrar ese método y aplicarlo.
+
+Si quieres ir un paso más allá intenta separar la cadena sin utilizar ese método.
+
+## Solucion:
+````
+def arreglo_a_cadena(arr)
+  arr.join(" ")
+end
+
+
+puts arreglo_a_cadena(["hola", "mundo"]) # "hola mundo"
+puts arreglo_a_cadena(["Make", "it", "Real"]) # "Make it Real"
+puts arreglo_a_cadena([]) # ""
+````
+
+````
+def arreglo_a_cadena(arr)
+  cadena = ""
+  separador = " "
+  arr.each do |elemento|
+    cadena += elemento.to_s + separador
+  end
+  cadena = cadena.chomp(separador)
+
+  print cadena
+end
+
+
+puts arreglo_a_cadena(["hola", "mundo"]) # "hola mundo"
+puts arreglo_a_cadena(["Make", "it", "Real"]) # "Make it Real"
+puts arreglo_a_cadena([]) # ""
+````
+
+![Arreglo a cadena](./public/imagenes_nivel-2/arreglo_a_cadena.png)
+![Arreglo a cadena](./public/imagenes_nivel-2/arreglo_a_cadena-2.png)
+
+---
+
+
+## Buscar en una matriz
+
+Escribe un método llamado buscar que reciba dos argumentos: una matriz (un arreglo de arreglos) y otro argumento (de cualquier tipo). El método debe retornar un arreglo con la posición donde se encuentra el segundo argumento. Si no se encuentra debe retornar nil.
+
+#### Por ejemplo, en el siguiente arreglo:
+
+````
+[
+["s", "o", "l"],
+["b", "i", "n"]
+]
+````
+
+#### El elemento s se encuentra en la posición [0, 0]. El elemento n se encuenta en [1, 2].
+
+````
+# escribe tu solución acá
+
+buscar([[1, 2], [3, 4]], 3) # [1, 0]
+buscar([[1, 2], [3, 4]], 5) # nil
+````
+
+## Solucion:
+````
+
+````
+
+![]()
 
 ---
 
@@ -1241,10 +1398,6 @@ puts buscar(["h", "o", "l", "a"], "d") # -1
 
 
 
-
-Buscar en un arreglo
-Cadena a arreglo
-Arreglo a cadena
 Buscar en una matriz
 Matriz a tabla
 Crea un hash
