@@ -1388,7 +1388,7 @@ buscar([[1, 2], [3, 4]], 5) # nil
 
 ````
 
-![]()
+![Buscar en una matriz]()
 
 ---
 
