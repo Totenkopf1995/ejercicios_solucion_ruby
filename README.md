@@ -1476,6 +1476,123 @@ imprimir_matriz([[1500, 2, 300], [5, 50, 6], [710, 86, 9]])
 ---
 
 
+## Hashes
+
+Escribe un método `hash` que reciba un arreglo y retorne un hash a partir del arreglo utilizando el índice de cada elemento del arreglo como llave.
+
+````
+# escribe tu solución acá
+
+puts hash([0, 1, 2, 3]) # {0=>0, 1=>1, 2=>2, 3=>3}
+puts hash([34, 925, 322]) # {0=>34, 1=>925, 2=>322}
+puts hash(["make", "it", "real"]) # {0=>"make", 1=>"it", 2=>"real"}
+puts hash([]) # {}
+````
+
+## Solucion:
+````
+def hash(arr)
+  h = {}
+  arr.each_with_index do |valor, indice|
+    h[indice] = valor
+  end
+  h
+end
+
+
+puts hash([0, 1, 2, 3]) # {0=>0, 1=>1, 2=>2, 3=>3}
+puts hash([34, 925, 322]) # {0=>34, 1=>925, 2=>322}
+puts hash(["make", "it", "real"]) # {0=>"make", 1=>"it", 2=>"real"}
+puts hash([]) # {}
+````
+
+![crea un hash](./public/imagenes_nivel-2/crea_un_hash.png)
+
+---
+
+
+## Traduce la frase
+
+Escribe un método `traducir` que reciba una cadena de texto y un diccionario (hash). Cada palabra en la cadena de texto se debe buscar en el diccionario y se debe retornar la nueva cadena "traducida". Si la palabra no se encuentra en el diccionario se utiliza la misma palabra de la cadena.
+
+````
+# escribe tu solución acá
+
+dict = { "hola" => "hello", "mundo" => "world" }
+puts traduce("hola mundo", dict) # "hello world"
+
+dict = { "hola" => "ciao" }
+puts traduce("hola pedro", dict) # "ciao pedro"
+
+puts traduce("", {}) # ""
+````
+
+#### Nota 1: Puedes dividir la cadena por espacios para separar las palabras. Nota 2: Ten cuidado que no te queden espacios al principio ni al final de la cadena traducida.
+
+## Solucion
+````
+def traduce(str, dict)
+  result = ""
+
+  words = str.split(" ")
+  words.each do |word|
+    result += "#{dict[word] ? dict[word] : word} "
+  end
+  result.strip
+end
+
+dict = { "hola" => "hello", "mundo" => "world" }
+puts traduce("hola mundo", dict) # "hello world"
+
+dict = { "hola" => "ciao" }
+puts traduce("hola pedro", dict) # "ciao pedro"
+
+puts traduce("", {}) # ""
+````
+
+![Traduce la frase](./public/imagenes_nivel-2/traduce_la_frase.png)
+
+---
+
+
+## Formatear un hash
+
+Escribe un método `formatear` que reciba un hash (con una estructura determinada) y devuelva una cadena de texto utilizando los valores del hash.
+
+#### El hash representa un producto y siempre va a tener las mismas llaves:
+
+#### name - el nombre del producto
+#### id - el identificador del producto
+#### price - el precio del producto
+#### unit - la unidad
+
+````
+# escribe acá tu solución
+
+puts formatear({ name: "Arroz", id: 1, price: 12.99, unit: "kg" })
+# "El producto Arroz con id 1 tiene un price de 12.99 por kg"
+
+puts formatear({ name: "Leche", id: 2, price: 5.95, unit: "litro" })
+# "El producto Leche con id 2 tiene un precio de 5.95 por kg"
+````
+
+## Solucion
+````
+def formatear(hash)
+  "El producto #{hash[:name]} con id #{hash[:id]} tiene un precio de #{hash[:price]} por #{hash[:unit]}"
+end
+
+
+puts formatear({ name: "Arroz", id: 1, price: 12.99, unit: "kg" })
+# "El producto Arroz con id 1 tiene un price de 12.99 por kg"
+
+puts formatear({ name: "Leche", id: 2, price: 5.95, unit: "litro" })
+# "El producto Leche con id 2 tiene un precio de 5.95 por kg"
+````
+
+![Formatear un hash](./public/imagenes_nivel-2/formatear_un_hash.png)
+
+---
 
 
 
@@ -1484,9 +1601,8 @@ imprimir_matriz([[1500, 2, 300], [5, 50, 6], [710, 86, 9]])
 
 
 
-Crea un hash
-Traduce la frase
-Formatea un hash
+
+
 Frecuencias
 Transcripción de ARN
 

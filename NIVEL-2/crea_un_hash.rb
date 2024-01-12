@@ -12,9 +12,13 @@ puts hash([]) # {}
 
 
 def hash(arr)
- array = arr.to_h 
- print array
+  h = {}
+  arr.each_with_index do |valor, indice|
+    h[indice] = valor
+  end
+  h
 end
+
 
 puts hash([0, 1, 2, 3]) # {0=>0, 1=>1, 2=>2, 3=>3}
 puts hash([34, 925, 322]) # {0=>34, 1=>925, 2=>322}
