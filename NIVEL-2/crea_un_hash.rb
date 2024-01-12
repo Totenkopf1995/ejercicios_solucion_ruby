@@ -12,7 +12,8 @@ puts hash([]) # {}
 
 
 def hash(arr)
-
+ array = arr.to_h 
+ print array
 end
 
 puts hash([0, 1, 2, 3]) # {0=>0, 1=>1, 2=>2, 3=>3}
