@@ -1363,7 +1363,9 @@ puts arreglo_a_cadena([]) # ""
 
 ## Buscar en una matriz
 
-Escribe un método llamado buscar que reciba dos argumentos: una matriz (un arreglo de arreglos) y otro argumento (de cualquier tipo). El método debe retornar un arreglo con la posición donde se encuentra el segundo argumento. Si no se encuentra debe retornar nil.
+#### Escribe un método llamado `buscar` que reciba dos argumentos: 
+
+una matriz (un arreglo de arreglos) y otro argumento (de cualquier tipo). El método debe retornar un arreglo con la posición donde se encuentra el segundo argumento. Si no se encuentra debe retornar nil.
 
 #### Por ejemplo, en el siguiente arreglo:
 
@@ -1385,10 +1387,91 @@ buscar([[1, 2], [3, 4]], 5) # nil
 
 ## Solucion:
 ````
+def buscar(matriz, elemento)
+  matriz.each_with_index do |fila, i|
+    fila.each_with_index do |valor, j|
+      return [i, j] if valor == elemento
+    end
+  end
+  nil
+end
 
+p buscar([[1, 2], [3, 4]], 3) # [1, 0]
+p buscar([[1, 2], [3, 4]], 5) # nil
 ````
 
-![Buscar en una matriz]()
+![Buscar en una matriz](./public/imagenes_nivel-2/buscar_en_una_matriz.png)
+
+---
+
+
+## Imprime la matriz
+
+#### Escribe un método `imprimir_matriz` que reciba una matriz (un arreglo de arreglos del mismo tamaño) e imprima en consola la matriz como se muestra a continuación:
+
+````
+# escribe tu solución acá
+
+imprimir_matriz([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#  1 | 2 | 3
+#  4 | 5 | 6
+#  7 | 8 | 9
+````
+
+Si quieres ir un paso más allá, sería interesante que el ancho de las columnas se adaptara al número de dígitos (o a la longitud de la cadena) más largo. 
+
+#### Por ejemplo:
+
+````
+imprimir_matriz([[1, 2, 3], [4, 50, 6], [71, 8, 9]])
+#   1 |  2 |  3
+#   4 | 50 |  6
+#  71 |  8 |  9
+
+imprimir_matriz([[1500, 2, 300], [5, 50, 6], [710, 86, 9]])
+#  1500 |    2 |  300
+#     5 |   50 |    6
+#   710 |    6 |    9
+````
+
+## Solucion:
+````
+def imprimir_matriz(matriz)
+  # Encuentra la longitud máxima de cada columna
+  column_widths = matriz.transpose.map { |columna| columna.map { |elemento| elemento.to_s.length }.max }
+
+  # Imprime la matriz
+  matriz.each do |fila|
+    fila.each_with_index do |elemento, index|
+      print elemento.to_s.rjust(column_widths[index] + 1)
+      print " | " unless index == fila.length - 1
+    end
+    puts  # Nueva línea para la siguiente fila
+  end
+end
+
+# Ejemplos de uso
+imprimir_matriz([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#  1 | 2 | 3
+#  4 | 5 | 6
+#  7 | 8 | 9
+
+puts
+
+imprimir_matriz([[1, 2, 3], [4, 50, 6], [71, 8, 9]])
+#   1 |  2 |  3
+#   4 | 50 |  6
+#  71 |  8 |  9
+
+puts
+
+imprimir_matriz([[1500, 2, 300], [5, 50, 6], [710, 86, 9]])
+#  1500 |    2 |  300
+#     5 |   50 |    6
+#   710 |   86
+````
+
+![matriz a tabla](./public/imagenes_nivel-2/matriz_a_tabla.png)
 
 ---
 
@@ -1398,8 +1481,9 @@ buscar([[1, 2], [3, 4]], 5) # nil
 
 
 
-Buscar en una matriz
-Matriz a tabla
+
+
+
 Crea un hash
 Traduce la frase
 Formatea un hash
