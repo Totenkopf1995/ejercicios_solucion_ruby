@@ -12,12 +12,15 @@ puts frecuencia("anita lava la tina")
 =end
 
 def frecuencia(str)
-  h = {}
-
-
+  result = Hash.new(0)
+  str.chars do |c|
+    if c != " "
+      result[c] += 1
+    end
+  end
+  result
 end
 
-# escribe tu solución acá
 
 puts frecuencia("hola mundo")
 # {"h"=>1, "o"=>2, "l"=>1, "a"=>1, "m"=>1, "u"=>1, "n"=>1, "d"=>1}
