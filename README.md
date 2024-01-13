@@ -1595,24 +1595,76 @@ puts formatear({ name: "Leche", id: 2, price: 5.95, unit: "litro" })
 ---
 
 
+## Frecuencias
+
+Escribe un método llamado frecuencia que reciba una cadena de texto y retorne un hash con el número de veces que aparece cada caracter (exceptuando el espacio en blanco).
+
+````
+# escribe tu solución acá
+
+puts frecuencia("hola mundo")
+# {"h"=>1, "o"=>2, "l"=>1, "a"=>1, "m"=>1, "u"=>1, "n"=>1, "d"=>1}
+
+puts frecuencia("anita lava la tina")
+# {"a"=>6, "n"=>2, "i"=>2, "t"=>2, "l"=>2, "v"=>1}
+````
+
+## Solucion
+````
+def frecuencia(str)
+  result = Hash.new(0)
+  str.chars do |c|
+    if c != " "
+      result[c] += 1
+    end
+  end
+  result
+end
 
 
+puts frecuencia("hola mundo")
+# {"h"=>1, "o"=>2, "l"=>1, "a"=>1, "m"=>1, "u"=>1, "n"=>1, "d"=>1}
+
+puts frecuencia("anita lava la tina")
+# {"a"=>6, "n"=>2, "i"=>2, "t"=>2, "l"=>2, "v"=>1}
+````
+
+![Frecuencias](./public/imagenes_nivel-2/frecuencias.png)
+
+---
 
 
+## Transcripción de ARN
 
+Escribe un método llamado `transcribir` que reciba una cadena de texto que representa una cadena de ADN y retorne el complemento de ARN.
 
+#### La forma de hacer la transcripción es tomar cada caracter de la cadena y reemplazarlo de la siguiente forma:
 
+* `G` -> `C`
+* `C` -> `G`
+* `T` -> `A`
+* `A` -> `U`
 
-Frecuencias
-Transcripción de ARN
+````
+# escribe tu solución acá
 
+puts transcribir("G") # "C"
+puts transcribir("C") # "G"
+puts transcribir("T") # "A"
+puts transcribir("A") # "U"
+puts transcribir("ACGTGGTCTTAA") # "UGCACCAGAAUU"
+````
 
+## Solucion
+````
 
+````
 
+![Transcripción de ARN](./public/imagenes_nivel-2/transcripción_de_ARN.png)
 
-
-
-
-
+---
 
 ## NIVEL-3 
+
+---
+
